@@ -25,6 +25,8 @@ $warrantyCode.inputmask({
 })
 
 const isPurchaseDateValid = () => {
+  const date = $purchaseDate.val()
+
   return (
     $purchaseDate
       .val()
@@ -174,8 +176,6 @@ $warrantyCodeSubmit.on('click', function (e) {
       $purchaseDate.parent().addClass('is--invalid')
       valid = false
     }
-
-    console.log('valid', valid)
 
     if (valid) {
       $warrantyCodeForm.find('form').submit()

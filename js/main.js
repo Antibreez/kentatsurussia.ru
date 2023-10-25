@@ -25,13 +25,12 @@ $warrantyCode.inputmask({
 })
 
 const isPurchaseDateValid = () => {
-  console.log('###date', Date.parse($purchaseDate.val()))
-
   return (
     $purchaseDate
       .val()
       .split('')
-      .filter(w => w === '.').length === 2 && !!Date.parse($purchaseDate.val())
+      .filter(w => w === '.').length === 2 &&
+    !!Date.parse(`${date.split('.')[1]}/${date.split('.')[0]}/${date.split('.')[2]}`)
   )
 }
 
